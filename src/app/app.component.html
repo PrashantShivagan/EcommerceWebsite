@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<head>
+  
+</head>
+<body>
+  <header>
+    <!--Top Navigation Bar code goes here-->
+  <app-top-navigation [title]="title"></app-top-navigation>
+  </header>
+
+  <body>
+    <router-outlet></router-outlet>
+    <!--Footer code goes here-->
+  <app-footer></app-footer>
+  </body>
+
+  
+  
+</body>
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-6 offset-sm-3">
+              <alert></alert>
+              <router-outlet></router-outlet>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- credits -->
+<div class="text-center">
+  <p>
+      <a href="https://jasonwatmore.com/post/2019/06/10/angular-8-user-registration-and-login-example-tutorial" target="_top">Angular 8 - User Registration and Login Example & Tutorial</a>
+  </p>
+  <p>
+      <a href="https://jasonwatmore.com" target="_top">JasonWatmore.com</a>
+  </p>
+</div>

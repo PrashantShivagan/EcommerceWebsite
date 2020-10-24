@@ -1,0 +1,227 @@
+<head>
+ 
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      
+      <!-- Left Column-->
+      <div class="col-xs-2">
+        
+        <!-- Size Filter-->
+        <div class="custom-filter-row">
+          <label>Size</label>
+          <div class="row">
+            <div class="col-xs-4">
+              <div>
+                <input type="checkbox">
+                <label class="chkBoxLabel">S</label>
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div>
+                <input type="checkbox">
+                <label class="chkBoxLabel">M</label>
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div>
+                <input type="checkbox">
+                <label class="chkBoxLabel">L</label>
+              </div>
+            </div>
+          </div>
+        </div><br><hr>
+  
+        <!-- Color Filter-->
+        <div class="custom-filter-row">
+          <label>Color</label>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="btn-group btn-group-lg">
+                <a href="#"><span class="color-circle" style="color: red;"></span></a>
+                <a href="#"><span class="color-circle" style="color: blue;"></span></a>
+                <a href="#"><span class="color-circle" style="color: yellow;"></span></a>
+                <a href="#"><span class="color-circle" style="color: green;"></span></a>
+                <a href="#"><span class="color-circle" style="color: white;"></span></a>
+                <a href="#"><span class="color-circle" style="color: black;"></span></a>
+                <a href="#"><span class="color-circle" style="color: orange;"></span></a>
+                <a href="#"><span class="color-circle" style="color: pink;"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <hr>
+  
+        <!-- design buttons-->
+        <div class="col-xs-12">
+          <button class="btn btn-outline-primary"><span class="glyphicon glyphicon-book"></span> Add Designs</button>
+        </div>
+        <div class="col-xs-12">
+          <button (click)="addTextField()" class="btn btn-outline-primary"><span class="glyphicon glyphicon-text-color"></span> Add Text</button>
+        </div>
+        <div class="col-xs-12">
+          <input type="file" id="imgload" (input)="onFileChange($event)" accept="image/*" class="custom-file-input" aria-describedby="inputGroupFileAddon01">
+          <!-- <button class="btn btn-outline-primary"><span class="glyphicon glyphicon-picture"></span> Upload Images</button> -->
+          <button class="btn btn-primary custom-file-label">Upload Images</button>
+        </div>
+        <div class="col-xs-12">
+          <button (click)="openDesigns()" class="btn btn-outline-primary"><span class="glyphicon glyphicon-envelope"></span> My Designs</button>
+        </div>
+  
+      </div>
+  
+      <!-- Middle Column-->
+      <div class="col-xs-8 middle-column">
+        <div id="imgContainer">
+          
+          <div class="dragBoundry" id="dragBoundry" >
+            <div id="fileInputImgContainer" class="fileInputImgContainer" cdkDragBoundary=".dragBoundry" cdkDrag [cdkDragDisabled] = "dragDisabled">
+              <img (click)="customImgDown($event)" class="fileInputImg" alt="">
+              
+              <div class="resizer ne"></div>
+              <div class="resizer nw"></div>   
+              <div class="resizer se"></div>
+              <div class="resizer sw"></div>
+            </div>
+
+            <div *ngFor="let newText of customTextArr" cdkDragBoundary=".dragBoundry" cdkDrag>
+              <textarea oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"' (click)="customTextClick($event)" value="Create Your Own" class="customText">Create Your Own</textarea>
+            </div>
+          </div>
+          <div>
+
+          <img class="mainImg center-block" src={{currentProd.custom_img}} alt="" disabled>
+          </div>
+  
+        </div>
+        <br>
+  
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="btn-group btn-group-lg">
+              <button type="button" class="btn btn-primary">Front</button>
+              <button type="button" class="btn btn-primary">Back</button>
+              <button type="button" class="btn btn-primary">Left</button>
+              <button type="button" class="btn btn-primary">Right</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="customTextPanel" class="col-xs-4 customTextPanel panel panel-default">
+          <div class="row panel-heading">
+            <div *ngIf="customTextClicked" class="col-xs-10">
+              <label for="">Add TEXT</label>
+            </div>
+            <div class="col-xs-2">
+              <button type="button" (click)="customTxtClose()" class="close">&times;</button>
+            </div>
+            
+          </div>
+          <br>
+          <div class="panel-body">
+            <div *ngIf="customTextClicked">
+              <label for="">Text</label>
+              <input type="text" value={{curCustomText}}>
+            </div>
+            <br>
+            <div  *ngIf="customTextClicked" class="row">
+              <div class="col-xs-8">
+                <label for="">Font</label>
+                <div class="box">
+                  <select>
+                    <option>Arial</option>
+                    <option>Baloo</option>
+                    <option>Kronika</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-xs-4">
+                <label for="">Size</label>
+                
+                <select (click)="onTextSelect()" class="objSize" name="" id="objSize">
+                    <option value="10px">10</option>
+                    <option value="12px">12</option>
+                    <option value="14px">14</option>
+                    <option value="16px">16</option>
+                    <option value="18px">18</option>
+                    <option value="20px">20</option>
+                    <option value="22px">22</option>
+                    <option value="24px">24</option>
+                    <option value="26px">26</option>
+                    <option value="28px">28</option>
+                    <option value="30px">30</option>
+                    <option value="32px">32</option>
+                    <option value="34px">34</option>
+                    <option value="36px">36</option>
+                    <option value="34px">38</option>
+                    <option value="40px">40</option>
+                    <option value="42px">42</option>
+                    <option value="44px">44</option>
+                    <option value="46px">46</option>
+                    <option value="48px">48</option>
+                    <option value="50px">50</option>
+                    <option value="52px">52</option>
+                    <option value="54px">54</option>
+                    <option value="56px">56</option>
+                    <option value="58px">58</option>
+                    <option value="60px">60</option>
+                    <option value="62px">62</option>
+                    <option value="64px">64</option>
+                    <option value="66px">66</option>
+                    <option value="68px">68</option>
+                    <option selected value="70px">70</option>
+                    
+                </select>
+                
+              </div>
+            </div><br>
+            <div *ngIf="customTextClicked" class="row">
+              <div class="col-xs-8">
+                <label for="">Formatting</label>
+                <div class="btn-group">
+                  <a type="button" class="btn btn-primary">B</a>
+                  <a type="button" class="btn btn-primary">I</a>
+                  <a type="button" class="btn btn-primary">U</a>
+              </div>
+              </div>
+              <div class="col-xs-4">
+                <label for="">Color</label>
+                <input (input)="chooseColor()"  type="color" id="colorPicker" name="colorPicker" value="#ff0000"><br><br>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-xs-6">
+                <button (click) ="removeCustomText()" class="btn btn-outline-danger">Delete</button>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+
+        <div class="allDesignsContainer panel panel-default">
+          <div class="panel-heading">
+            <div class="col-xs-10">
+              <label for="">Add Design</label>
+            </div>
+            <div class="col-x s-2">
+              <button type="button" (click)="customTxtClose()" class="close">&times;</button>
+            </div>
+          </div>
+          <div class="panel-body">
+            
+          </div>
+        </div>
+  
+      </div>
+  
+       <!-- Right Column-->
+      <div class="col-xs-2">
+  
+      </div>
+  
+    </div>
+  </div>
+</body>

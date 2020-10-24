@@ -1,0 +1,126 @@
+<div class="row">
+  <div class="col-xs-12 filter-column">
+    <div class="filter-text">
+      <label>Filters</label>
+    </div><br>
+
+    <div class="filter-category">
+      <div class="filter-category-text">
+        <label>DESIGN PATTERN</label>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <input type="radio" id="chkPrinted" name="mainType" (change)="radioChangeHandler($event)" value="printed" class="chkPrinted chkbox" checked><label class="category-content-text">Printed</label>
+        </div>
+        <div class="col-lg -12">
+          <input type="radio" id="chkCustomize" name="mainType" (change)="radioChangeHandler($event)" value="customised" class="chkCustomize chkbox"><label class="category-content-text">Customize</label>
+        </div>
+      </div>
+    </div><br><br>
+    
+    <div class="filter-category">
+      <div class="filter-category-text">
+        <label>STYLE</label>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-md-12">
+          <input type="radio" name="genderType" (change)="genderChangeHandler($event)" value="men" class="chkPrinted chkbox" checked><label class="category-content-text">Men</label>
+        </div>
+        <div class="col-xs-6 col-md-12">
+            <input type="radio" name="genderType" (change)="genderChangeHandler($event)" value="women" class="chkCustomize chkbox"><label class="category-content-text">Women</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 col-xs-6">
+          <input type="radio" name="genderType" (change)="genderChangeHandler($event)" value="kids" class="chkCustomize chkbox"><label class="category-content-text">Kids</label>
+        </div>
+        <div class="col-md-12 col-xs-6">
+            <input type="radio" name="genderType" (change)="genderChangeHandler($event)" value="unisex" class="chkCustomize chkbox"><label class="category-content-text">Unisex</label>
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="filter-category">
+      <div class="filter-category-text">
+        <label>SIZE</label>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <input type="checkbox" class="chkSmall chkbox"><label class="">S</label>
+        </div>
+        <div class="col-sm-12">
+          <input type="checkbox" class="chkCustomize chkbox"><label class="">M</label>
+        </div>
+        <div class="col-sm-12">
+          <input type="checkbox" class="chkCustomize chkbox"><label class="">L</label>
+        </div>
+        <div class="col-sm-12">
+          <input type="checkbox" class="chkCustomize chkbox"><label class="">XL</label>
+        </div>
+        <div class="col-sm-12">
+          <input type="checkbox" class="chkCustomize chkbox"><label class="category-content-text">XXL</label>
+        </div>
+        <div class="col-sm-12">
+          <input type="checkbox" class="chkCustomize chkbox"><label class="category-content-text">XXXL</label>
+        </div>
+        <div class="col-sm-12">
+          <input type="checkbox" class="chkCustomize chkbox"><label class="category-content-text">PLUS SIZE</label>
+        </div>
+      </div>
+    </div><br><br>
+
+        
+    <div class="filter-category">
+      <div class="filter-category-text">
+        <label>COLOR</label>
+      </div>
+     
+    <div class="row">
+      <div>
+        <input type="checkbox" class="chkPrinted chkbox"><label class="category-content-text">Black</label>
+      </div>
+      <div class="rightFilter">
+        <input type="checkbox" class="chkCustomize chkbox"><label class="category-content-text">White</label>
+      </div>
+      <div class="rightFilter">
+        <input type="checkbox" class="chkCustomize chkbox"><label class="category-content-text">Blue</label>
+      </div>
+    </div>
+    <div class="row filter-category-other-row">
+      <div class="rightFilter">
+        <input type="checkbox" class="chkCustomize chkbox"><label class="category-content-text">Red</label>
+      </div>
+      <div class="rightFilter">
+        <input type="checkbox" class="chkCustomize chkbox"><label class="category-content-text">Yellow</label>
+      </div>
+    </div>
+  </div><br>
+
+  <div class="filter-category">
+    <div class="filter-category-text">
+      <label>PRICE</label>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-12">
+        <input type="checkbox" class="chkPrinted chkbox"><label class="category-content-text">< 199</label>
+      </div>
+      <div class="col-sm-12">
+        <input type="checkbox" class="chkCustomize chkbox"><label class="category-content-text">< 299</label>
+      </div>
+      <div class="col-sm-12">
+        <input type="checkbox" class="chkCustomize chkbox"><label class="category-content-text">< 499</label>
+      </div>
+      <div class="col-sm-12">
+        <input type="checkbox" class="chkCustomize chkbox"><label class="category-content-text">< 699</label>
+      </div>
+      <div class="col-sm-12">
+        <input type="checkbox" class="chkCustomize chkbox"><label class="category-content-text">< 1499</label>
+      </div>
+    </div>
+  </div><br><br>
+
+  </div>
+</div>

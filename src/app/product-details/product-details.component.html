@@ -1,0 +1,140 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-1 column-align align-row">
+      <div class="row sub-img">
+        <div>
+          <img class="subImages" src="assets/fruits/fruit1.jpg" alt="">
+        </div>
+      </div>
+      <div class="row sub-img">
+        <div>
+          <img class="subImages" src="assets/fruits/fruit2.jpg" alt="">
+        </div>
+      </div>
+      <div class="row sub-img">
+        <div>
+          <img class="subImages" src="assets/fruits/fruit3.jpg" alt="">
+        </div>
+      </div>
+      <div class="row sub-img">
+        <div>
+          <img class="subImages" src="assets/fruits/fruit4.jpg" alt="">
+        </div>
+      </div>
+      <div class="row sub-img">
+        <div>
+          <img class="subImages" src="assets/fruits/fruit5.jpg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-4 column-align align-row main-img">
+     <img class="img-responsive" src="{{currentProduct.product_img}}" alt="">
+    </div>
+
+    <div class="col-xs-4 column-align align-row">
+      <div>
+        
+        <!--N   ame of Product-->
+        <div class="align-left">
+          {{currentProduct.product_name}}
+        </div>
+        
+         <!--Ratings to Products-->
+        <div class="row rating-align">
+          <div *ngFor="let cnt of starCountArr">
+            <div>
+              <i class="material-icons product-rating">star</i>
+            </div>
+          </div>
+        </div>
+
+        <!--Pricing of Products-->
+        <div class="card-text product-price-text align-left">
+          <label>Price : <span class="price-color">{{currentProduct.product_price}}</span></label>
+        </div>
+
+        <div>
+          <div class="row">
+            <div class="col-xs-6 align-left">
+              <label for="">30 days return & Exchange</label>
+            </div>
+            <div class="col-xs-6 align-left">
+              <label for="">Free Delivery</label>
+            </div>
+          </div>
+        </div><br><hr>
+
+        <div class="align-left">
+          <label for="">Delivery Address :</label>
+          <label>abc, cdefg, high. klmnopqrst,London</label>
+        </div><br>
+
+      </div>
+    </div>
+
+    <div class="col-xs-3 column-align align-row">
+      <div class="card">
+        <div class="card-body">
+         <div class="row">
+           <label for="">Quantity</label>
+           <input type="dropdown">
+         </div>
+         <div>
+           <button>Add To Cart</button>
+         </div>
+         <div>
+          <button>Prceed To Buy</button>
+        </div>
+        <div>
+          <button>Add To Wishlist</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="align-left">
+          <label for="">Description :</label>
+          <label>Look absolutely confident wearing this fashionable Jacket from the house of Gritstones. With this Casual T shirt, you can choose to complete your look with your favourite jeans and look effortlessly cool</label>
+        </div>
+      </div>
+    </div><br>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="align-left">
+          <label for="">Details :</label><br>
+          <label>Material: Cotton
+            Colour: Black Hooded
+            Sleeve Type: Full Sleeves
+            Neck Type: Hooded
+            Occasion: Casual</label>
+        </div>
+      </div>
+    </div><br>
+
+    <div class="row">
+     <div class="col-xs-12">
+      <div class="align-left">
+        <label for="">Have a question ?</label><br>
+        <label class="subText">Find answers in product info, Q&As, reviews</label><br>
+        <input type="text" placeholder="Type your question or keyword">
+      </div>
+     </div>
+    </div><br>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="align-left">
+          <label for="">Write a review</label><br>
+          <label class="subText">Share your thoughts with other customers</label><br>
+          <input type="text" placeholder="Write review">
+        </div>
+      </div>
+    </div>
+    
+    
+</div>

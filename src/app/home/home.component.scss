@@ -1,0 +1,60 @@
+#common-home{
+    width: 100%;
+    //padding-left: 30px;
+    //padding-right: 30px;
+}
+
+.container-fluid{
+    //background-color: khaki;
+}
+
+@media screen and(min-width:768px){
+     col-sm-6{
+    //     width:50%;
+        position: relative;
+         float: left;
+     }
+
+}
+
+.headeing-line {
+    font-size: 100%;
+    text-align: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.card-group1{
+    margin-left: 80px;
+}
+
+.featured-product-img{
+    margin-left: 52px;
+    margin-top: 10px;
+}
+
+.place-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.company-info-txt{
+    text-align: justify;
+    font-size: 14px;
+    padding:10px;
+}
+
+.cardInfo{
+    width: 100%;
+    height: 370px;
+    margin: 10px auto;
+}
+
+.scrollable{
+    overflow-y: auto;
+    max-height: 300px;
+}
