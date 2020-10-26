@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ImageSlideBannerComponent } from './image-slide-banner/image-slide-bann
 import { TopNavigationComponent } from './top-navigation/top-navigation.component';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login';
 import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
 import { ProductListingComponent } from './product-listing/product-listing.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -19,33 +21,39 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import {OwlModule} from 'ngx-owl-carousel';
 import { SideNavBarComponent } from './side-nav-bar/side-nav-bar.component';
 import { NO_ERRORS_SCHEMA,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import {RegisterComponent} from './register'
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
-    ImageSlideBannerComponent,
     TopNavigationComponent,
-    ProductFilterComponent,
     HomeComponent,
+    ImageSlideBannerComponent,
+    SideNavBarComponent,
+    ProductFilterComponent,
     SubCategoriesComponent,
     ProductListingComponent,
     ProductDetailsComponent,
     CustomizeProductComponent,
-    SideNavBarComponent
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DragDropModule,
     FormsModule,
-    BrowserModule,
     BrowserAnimationsModule,
-    OwlModule
+    OwlModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
   schemas :  [

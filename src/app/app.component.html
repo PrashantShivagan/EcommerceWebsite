@@ -7,25 +7,23 @@
     <!--Top Navigation Bar code goes here-->
   <app-top-navigation [title]="title"></app-top-navigation>
   </header>
-
-  <body>
-    <router-outlet></router-outlet>
+  <alert></alert>
+  <router-outlet></router-outlet>
     <!--Footer code goes here-->
   <app-footer></app-footer>
-  </body>
 
   
   
 </body>
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+<!-- <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
     <div class="navbar-nav">
         <a class="nav-item nav-link" routerLink="/">Home</a>
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
     </div>
-</nav>
+</nav> -->
 
 <!-- main app container -->
-<div class="jumbotron">
+<!-- <div class="jumbotron">
   <div class="container">
       <div class="row">
           <div class="col-sm-6 offset-sm-3">
@@ -34,7 +32,7 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
 
 <!-- credits -->
 <div class="text-center">
